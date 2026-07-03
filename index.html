@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dad Universe: Stats Comedy Mode</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:radial-gradient(circle,#0b1220,#000);
+    color:white;
+    text-align:center;
+}
+
+h1{ margin:20px 0; }
+
+#core{
+    width:60%;
+    margin:20px auto;
+    background:#111a2b;
+    padding:20px;
+    border-radius:15px;
+}
+
+#fact{
+    font-size:20px;
+    min-height:60px;
+    margin-top:10px;
+}
+
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin:20px auto;
+    max-width:1200px;
+}
+
+.card{
+    width:240px;
+    background:white;
+    color:black;
+    border-radius:12px;
+    padding:10px;
+    box-shadow:0 0 12px rgba(0,0,0,0.4);
+}
+
+.screen{
+    margin-top:8px;
+    height:170px;
+    background:#000;
+    color:white;
+    font-size:11px;
+    text-align:left;
+    padding:8px;
+    overflow:hidden;
+    border-radius:8px;
+    font-family:monospace;
+    white-space:pre-line;
+}
+
+button{
+    margin-top:6px;
+    padding:6px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    background:#2d6cdf;
+    color:white;
+    font-size:12px;
+}
+
+button:hover{ transform:scale(1.05); }
+
+#jokeCore{
+    width:80%;
+    margin:30px auto;
+    background:#1a1a2b;
+    padding:20px;
+    border-radius:15px;
+}
+
+#jokeBox{
+    margin-top:10px;
+    font-size:18px;
+    min-height:50px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊🧠 DAD UNIVERSE: STATISTICS + COMEDY MODE</h1>
+
+<div id="core">
+<h2>📚 Useless Fact Core</h2>
+<div id="fact">Generate useless knowledge.</div>
+<button onclick="fact()">Generate Fact</button>
+</div>
+
+<div class="row">
+
+<div class="card">🚽 Toilet<button onclick="toilet()">Run</button><div class="screen" id="toilet"></div></div>
+<div class="card">😴 Nap<button onclick="nap()">Run</button><div class="screen" id="nap"></div></div>
+<div class="card">🔥 Sauna<button onclick="sauna()">Run</button><div class="screen" id="sauna"></div></div>
+<div class="card">🏕️ Camp<button onclick="camp()">Run</button><div class="screen" id="camp"></div></div>
+<div class="card">🏍️ Dirt Bike<button onclick="dirt()">Run</button><div class="screen" id="dirt"></div></div>
+<div class="card">🌲 Logging<button onclick="log()">Run</button><div class="screen" id="log"></div></div>
+<div class="card">🔧 Work<button onclick="work()">Run</button><div class="screen" id="work"></div></div>
+<div class="card">🛒 Shop<button onclick="shop()">Run</button><div class="screen" id="shop"></div></div>
+
+</div>
+
+<div id="jokeCore">
+<h2>😂 Dad Joke Core</h2>
+<div id="jokeBox">Generate humor injection.</div>
+<button onclick="joke()">Generate Joke</button>
+</div>
+
+<script>
+
+/* FACT CORE */
+function fact(){
+let f=[
+"Bananas = berries, strawberries = not.",
+"Octopuses: 3 hearts, 0 regrets.",
+"Wombats produce cube-shaped data logs.",
+"Venus day > Venus year (confusing stats).",
+"Humans = 60% banana (unverified).",
+"Sharks older than trees (probably mad)."
+];
+
+document.getElementById("fact").innerText =
+f[Math.floor(Math.random()*f.length)];
+}
+
+/* ENGINE */
+function run(id, lines){
+let box=document.getElementById(id);
+box.innerText="";
+let i=0;
+
+let interval=setInterval(()=>{
+box.innerText += lines[i] + "\n";
+i++;
+if(i>=lines.length) clearInterval(interval);
+},320);
+}
+
+/* 🚽 TOILET */
+function toilet(){
+run("toilet",[
+"🚽 SESSION STARTED",
+"📊 DURATION: 12.4 min (claimed: 3)",
+"📱 SCROLL RATE: HIGH",
+"💭 THOUGHTS: 8 random ideas/min",
+"⚠️ PRODUCTIVITY: -42%",
+"😂 EXCUSE: 'just checking something'",
+"✔ STATUS: SUCCESSFULLY DISTRACTED"
+]);
+}
+
+/* 😴 NAP */
+function nap(){
+run("nap",[
+"😴 NAP MODE ON",
+"📊 EFFICIENCY: 31%",
+"⏰ TIME LOST: 54 min",
+"🛌 DREAM ACTIVITY: HIGH CHAOS",
+"💭 CONTENT: flying + confusion",
+"⚠️ SIDE EFFECT: more tired",
+"✔ RESULT: questionable recovery"
+]);
+}
+
+/* 🔥 SAUNA */
+function sauna(){
+run("sauna",[
+"🔥 SAUNA ACTIVE",
+"🌡️ TEMP: extreme dad levels",
+"💦 SWEAT RATE: 3x normal",
+"🧠 BRAIN ACTIVITY: overthinking bills",
+"📊 CALORIES: 0.8 donut units",
+"😂 DECISION QUALITY: decreasing",
+"✔ STATUS: cooked but clean"
+]);
+}
+
+/* 🏕️ CAMP */
+function camp(){
+run("camp",[
+"🏕️ CAMP REPORT",
+"📊 COMFORT: 52%",
+"🦟 BUG INTERACTIONS: 19",
+"🔥 FIRE SIZE: questionable",
+"🍖 FOOD QUALITY: burnt optimism",
+"💭 THOUGHT: hotel was cheaper",
+"✔ STATUS: survived outdoors"
+]);
+}
+
+/* 🏍️ DIRT BIKE */
+function dirt(){
+run("dirt",[
+"🏍️ BIKE STATS",
+"📊 SPEED AVG: 78 km/h",
+"🌪️ DIRT LEVEL: maximum",
+"🪨 NEAR CRASHES: 2.7",
+"💭 CONFIDENCE: higher than skill",
+"😂 REGRET: low but growing",
+"✔ STATUS: survived chaos"
+]);
+}
+
+/* 🌲 LOGGING */
+function log(){
+run("log",[
+"🌲 LOG STATS",
+"📊 TREES CUT: 16",
+"⚙️ EFFICIENCY: 74%",
+"🚛 LOAD STABILITY: 61%",
+"💭 THOUGHT: nature judging you",
+"⚠️ NOISE LEVEL: illegal vibe",
+"✔ STATUS: mission complete"
+]);
+}
+
+/* 🔧 WORK */
+function work(){
+run("work",[
+"🔧 SHIFT STATS",
+"⏰ HOURS: 8 (felt 14)",
+"☕ COFFEE: 3.2 units",
+"📊 PRODUCTIVITY: 58%",
+"💰 PAY: barely worth it",
+"💭 THOUGHT: 'retirement soon?'",
+"✔ STATUS: survived capitalism"
+]);
+}
+
+/* 🛒 SHOP */
+function shop(){
+run("shop",[
+"🛒 SHOP STATS",
+"💸 SPENT: too much",
+"🔦 ITEM: unnecessary flashlight",
+"🧰 TOOLBOX: mystery contents",
+"📊 VALUE: 43% useful",
+"😂 DECISION: emotionally driven",
+"✔ STATUS: checkout complete"
+]);
+}
+
+/* 😂 JOKES */
+function joke(){
+let j=[
+"I told my wife she was drawing eyebrows too high. She looked surprised.",
+"I only know 25 letters of the alphabet... I don't know Y.",
+"I'm reading anti-gravity book — can't put it down.",
+"Why don't eggs tell jokes? They'd crack up."
+];
+
+document.getElementById("jokeBox").innerText =
+j[Math.floor(Math.random()*j.length)];
+}
+
+</script>
+
+</body>
+</html>
